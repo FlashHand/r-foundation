@@ -1,0 +1,26 @@
+{
+  "name": "r-foundation",
+  "version": "1.1.6",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "esbuild src/index.ts --bundle --platform=node --format=esm --outdir=dist && tsc --emitDeclarationOnly --declaration --outDir dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@code.aliyun.com:rys-fe-modules/r-foundation.git"
+  },
+  "author": "王博",
+  "license": "ISC",
+  "dependencies": {
+    "dayjs": "^1.8.30",
+    "lodash": "^4.17.19"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.3",
+    "tslib": "^2.5.0",
+    "typescript": "^4.9.5"
+  }
+}
