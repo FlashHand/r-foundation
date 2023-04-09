@@ -15,6 +15,7 @@
     "baseUrl": ".",
     "resolveJsonModule": true,
     "emitDeclarationOnly": false,
+    "useUnknownInCatchVariables": false,
     "types": [
       "node"
     ],
@@ -25,6 +26,7 @@
   },
   "include": ["src/**/*"],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "**/*.spec.ts",
   ]
 }
