@@ -1,4 +1,1 @@
-declare const _default: {
-    sleep: (ms: number) => Promise<unknown>;
-};
-export default _default;
+export declare const sleep: (ms: number) => Promise<unknown>;

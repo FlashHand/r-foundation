@@ -1,21 +1,19 @@
 {
   "name": "r-foundation",
-  "version": "1.2.2",
+  "version": "1.2.4",
   "description": "",
-  "main": "cjs/index.js",
-  "module": "esm/index.js",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:esm": "esbuild src/index.ts --bundle --platform=node --format=esm --outdir=esm --external:dayjs --external:lodash && tsc --emitDeclarationOnly --declaration --outDir esm",
-    "build:cjs": "esbuild src/index.ts --bundle --platform=node  --outdir=cjs --external:dayjs --external:lodash && tsc --emitDeclarationOnly --declaration --outDir cjs",
-    "build": "yarn build:esm && yarn build:cjs"
+    "build:esm": "esbuild src/index.ts --bundle --platform=node --format=esm --outfile=dist/index.mjs",
+    "build:cjs": "esbuild src/index.ts --bundle --platform=node  --outfile=dist/index.js",
+    "build": "yarn build:esm && yarn build:cjs && tsc --emitDeclarationOnly --declaration --outDir dist"
   },
-  "exports":{
-    ".": {
-      "import": "./esm/index.js",
-      "require": ".cjs/index.js"
-    }
+  "exports": {
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.js",
+    "types": "./dist/index.d.ts"
   },
   "repository": {
     "type": "git",
